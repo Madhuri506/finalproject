@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+</head>
+<body>
+
+
+    <ion-header>
+        <ion-toolbar color="primary" >
+          <ion-title><h2> Loan Prediction</h2> </ion-title>
+          <ion-back-button slot="start" defaultHref="/home"></ion-back-button>
+        </ion-toolbar>
+      </ion-header>
+
+    <ion-content>
+
+    <ion-grid>
+
+        <ion-row>
+        <ion-col size-md="4" offset-md="4">
+            <ion-card>
+                <ion-card-content>
+                    <form action="http://localhost:5000/uploader"  enctype="multipart/form-data" method="post">
+
+
+
+                        <!--<input class="input-text" type="text" name="id"  placeholder="Loan_Id" required><br>-->
+                        <!-- <ion-item>
+                        <ion-icon name="id-card-sharp" slot="start"></ion-icon>
+                        <ion-label position="floating" color="primary">Loan_Id</ion-label>
+                        <ion-input type="number" name="id"></ion-input>
+                        </ion-item> -->
+
+
+                        <!-- <strong>Gender:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="male" name="Gender" value=1><label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" id="female" name="Gender" value=0><label for="female">Female</label><br>-->
+
+                        <ion-item>
+                                <ion-icon name="male-female-sharp" slot="start"></ion-icon>
+                            <ion-label color="primary" position="floating">Gender</ion-label>
+                                <ion-select  ok-text="Ok" cancel-text="Cancel" name="Gender">
+                                <ion-select-option value="1">Female</ion-select-option>
+                                <ion-select-option value="0">Male</ion-select-option>
+                               </ion-select>
+                    </ion-item>
+
+
+                        <!--<strong>Married:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="Married" value=1><label for="married">married</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="Married" value=0><label for="unmarried">unmarried</label><br>-->
+
+                         <ion-item>
+                                <ion-icon name="people-circle-sharp" slot="start"></ion-icon>
+                            <ion-label color="primary" position="floating">Married</ion-label>
+                                <ion-select  ok-text="Ok" cancel-text="Cancel" name="Married" required>
+                                <ion-select-option value="1">married</ion-select-option>
+                                <ion-select-option value="0">unmarried</ion-select-option>
+                               </ion-select>
+                        </ion-item>
+
+                        <!--<input class="input-text" type="number" name="Dep" placeholder="Dependents" required><br>-->
+                        <ion-item>
+                        <ion-icon name="people-sharp" slot="start"></ion-icon>
+                        <ion-label position="floating" color="primary">Dependents</ion-label>
+                        <ion-input type="number" name="Dep" required></ion-input>
+                        </ion-item>
+
+
+                        <!--<strong>Education:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="Education" value=1><label for="Graduate">Graduate</label>
+                        <input type="radio" name="Education" value=0><label for="Not Graduate">Not Graduate</label><br>-->
+
+                        <ion-item>
+                                <ion-icon name="book-sharp" slot="start"></ion-icon>
+                            <ion-label color="primary" position="floating">Education</ion-label>
+                                <ion-select  ok-text="Ok" cancel-text="Cancel" name="Education" required>
+                                <ion-select-option value="1">Graduate</ion-select-option>
+                                <ion-select-option value="0">Not Graduate</ion-select-option>
+                               </ion-select>
+                        </ion-item>
+
+                        <!--<strong>Self employed:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="self_emp" value=1><label for="Yes">Yes</label>
+                        <input type="radio" name="self_emp" value=0><label for="No">No</label><br>-->
+
+                        <ion-item>
+                                <ion-icon name="man" slot="start"></ion-icon>
+                            <ion-label color="primary" position="floating">Self employed</ion-label>
+                                <ion-select  ok-text="Ok" cancel-text="Cancel" name="self_emp" required>
+                                <ion-select-option value="1">Yes</ion-select-option>
+                                <ion-select-option value="0">No</ion-select-option>
+                               </ion-select>
+                    </ion-item>
+
+                        <!--<strong>Credit History:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="Credit_History" value=1><label for="Yes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="Credit_History" value=0><label for="No">No</label><br>-->
+
+                         <ion-item>
+                                <ion-icon name="wallet-sharp" slot="start"></ion-icon>
+                            <ion-label color="primary" position="floating">Credit History</ion-label>
+                                <ion-select  ok-text="Ok" cancel-text="Cancel" name="Credit_History" required>
+                                <ion-select-option value="1">Yes</ion-select-option>
+                                <ion-select-option value="0">No</ion-select-option>
+                               </ion-select>
+                    </ion-item>
+
+
+                        <ion-item>
+                            <ion-icon name="logo-usd" slot="start"></ion-icon>
+                            <ion-label position="floating" color="primary">Applicant Income </ion-label>
+                            <ion-input type="number" name="ai" required></ion-input>
+                        </ion-item>
+
+
+                        <ion-item>
+                            <ion-icon name="cash-sharp" slot="start"></ion-icon>
+                            <ion-label position="floating" color="primary">Co Applicant Income </ion-label>
+                            <ion-input type="number" name="cap" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-icon name="briefcase-sharp" slot="start"></ion-icon>
+                            <ion-label position="floating" color="primary">Loan Amount</ion-label>
+                            <ion-input type="number" name="la" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-icon name="pricetags-sharp" slot="start"></ion-icon>
+                            <ion-label position="floating" color="primary">Loan Amount Term</ion-label>
+                            <ion-input type="number" name="lat" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-icon name="newspaper-sharp" slot="start"></ion-icon>
+                            <ion-label color="primary" position="floating">Property area</ion-label>
+                            <ion-select  ok-text="Ok" cancel-text="Cancel" name="Property_Area" required>
+                            <ion-select-option value="2">Urban</ion-select-option>
+                            <ion-select-option value="1">Semi-urban</ion-select-option>
+                            <ion-select-option value="0">Rural</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-button class="primary" type="submit" expand="block">Predict</ion-button>
+                            <ion-button class="primary" type="reset" expand="block">Cancel</ion-button>
+                        </ion-item>
+
+
+                </form>
+                </ion-card-content>
+            </ion-card>
+      </ion-col>
+
+     </ion-row>
+
+    <ion-row>
+        <ion-col size-md="4" offset-md="4">
+            <ion-card color="tertiary">
+                <ion-card-header align="center">
+                   <h1>Prediction</h1>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-item class="ion-padding" color="tertiary" lines="none">
+                        <ion-label class="ion-text-center"><h2>{{ prediction_text }}</h2></ion-label>
+                    </ion-item>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
+    </ion-grid>
+
+
+</ion-content>
+</body>
+</html>
